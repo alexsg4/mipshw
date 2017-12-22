@@ -35,10 +35,10 @@ main:
     beq $t0, 2, prime 
 
     divu	$t0, $t1			# $t0 / $t1
-    mflo	$t2					# $t2 = floor($t0 / $t1) 
-    mfhi	$t3					# $t3 = $t0 mod $t1 
+    mflo	$t2				# $t2 = floor($t0 / $t1) 
+    mfhi	$t3				# $t3 = $t0 mod $t1 
 
-    move $t4, $t2               # $t3 = n/2 
+    move $t4, $t2               		# $t3 = n/2 
 
 loop:
 
@@ -46,8 +46,8 @@ loop:
     addi $t1, 1
 
     divu	$t0, $t1			# $t0 / $t1
-    mflo	$t2					# $t2 = floor($t0 / $t1) 
-    mfhi	$t3					# $t3 = $t0 mod $t1 
+    mflo	$t2				# $t2 = floor($t0 / $t1) 
+    mfhi	$t3				# $t3 = $t0 mod $t1 
 
     blt $t1, $t4 loop
 
@@ -83,8 +83,6 @@ prime:
     la $a0, w_prime
     li $v0, 4
     syscall
-    
-    j end
     
 end:
     li $v0, 10

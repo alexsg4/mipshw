@@ -15,13 +15,13 @@ loop:
     li $t1, 10
     lw $t4, s
 
-    divu	$t0, $t1			# $t0 / $t1
-    mflo	$t2					# $t2 = floor($t0 / $t1) 
-    mfhi	$t3					# $t3 = $t0 mod $t1 
+    divu	$t0, $t1		# $t0 / $t1
+    mflo	$t2			# $t2 = floor($t0 / $t1) 
+    mfhi	$t3			# $t3 = $t0 mod $t1 
 
     move $t0, $t2 
     addu $t4, $t4, $t3 
-    sw $t4, s # s+=n%10
+    sw $t4, s 				# s+=n%10
 
     b loop
 

@@ -1,9 +1,9 @@
-# Program that determines the s of a natural number's divisors
+# Program that determines the sum s of a natural number's divisors
 
 .data
 
 n: .word 3
-s: .word 4
+s: .word 0
 
 .text
 main:
@@ -16,10 +16,10 @@ main:
 
     li $t1, 2
     divu	$t0, $t1			# $t0 / $t1
-    mflo	$t2					# $t2 = floor($t0 / $t1) 
-    mfhi	$t3					# $t3 = $t0 mod $t1 
+    mflo	$t2				# $t2 = floor($t0 / $t1) 
+    mfhi	$t3				# $t3 = $t0 mod $t1 
 
-    move $t4, $t2               # $t4 = n/2 
+    move $t4, $t2               		# $t4 = n/2 
     beq $t0, $t1, add1 
     beqz $t3, divisor 
 
@@ -30,8 +30,8 @@ loop:
     beqz $t3, divisor 
 
     divu	$t0, $t1			# $t0 / $t1
-    mflo	$t2					# $t2 = floor($t0 / $t1) 
-    mfhi	$t3					# $t3 = $t0 mod $t1 
+    mflo	$t2				# $t2 = floor($t0 / $t1) 
+    mfhi	$t3				# $t3 = $t0 mod $t1 
 
 b loop
 

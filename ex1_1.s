@@ -1,7 +1,5 @@
 # Program that determines the maximum of 3 integers.
-# Pre-determined values for now.
-# TODO use keyboard input for the 3 values 
-# TODO generalise for an array of integers 
+ 
 
 .data
 x: .word 3      # 1st value
@@ -19,7 +17,7 @@ j v2
 
 r1:
 sw $t1, max # x is the new max
-nop
+
 
 v2: # compare current max and y
 lw $t0, max
@@ -29,7 +27,6 @@ j end # else finish execution
 
 r2: # y is the new max
 sw $t1, max # y is the new max
-j end # max is found
 
 end:
 li $v0, 10
